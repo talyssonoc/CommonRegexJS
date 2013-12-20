@@ -1,5 +1,5 @@
 var CommonRegex = function(_text) {
-  this.text = _text;
+  this.text = _text || '';
 
   var opt = function(regex) {
     return '(?:' + regex + ')?';
@@ -51,12 +51,26 @@ var CommonRegex = function(_text) {
     return _text.match(emailsRegex);
   };
 
+  this.getIPv4 = function(_text) {
+    _text = _text || this.text;
+    var IPv4Regex = /\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/gm;
+    return _text.match(IPv4Regex);
+  };
+
+  this.getHexColors = function(_text) {
+    _text = _text || this.text;
+    var hexValuesRegex = /#(?:[0-9a-fA-F]{3}){1,2}\b/gim;
+    return _text.match(hexValuesRegex)
+  };
+
   if(typeof _text !== 'undefined') {
     this.dates = this.getDates();
     this.times = this.getTimes();
     this.phones = this.getPhones();
     this.links = this.getLinks();
     this.emails = this.getEmails();
+    this.IPv4 = this.getIPv4();
+    this.hexColors = this.getHexColors();
   }
 
   return this;

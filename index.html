@@ -8,7 +8,7 @@
 
       var text = 'John, please get that article on www.linkedin.com to me by 5:00PM\n'
       + 'on Jan 9th 2012. 4:00 would be ideal, actually. If you have any \n'
-      + 'questions, You can reach me at (012)-345-6789 or get in touch with\n'
+      + 'questions, you can reach me at (012)-345-6789 or get in touch with\n'
       + 'my associate at my-email@gmail.com';
 
       var commonRegex = new CommonRegex(text);
@@ -16,7 +16,9 @@
       console.log(commonRegex.times);
       console.log(commonRegex.phones);
       console.log(commonRegex.links);
-      console.log(commonRegex.getEmails('Get in touch with my associate at my-email@gmail.com'));
+      console.log(commonRegex.emails);
+      console.log(commonRegex.getIPv4('The IPv4 address for localhost is 127.0.0.1'));
+      console.log(commonRegex.getHexColors('Did you knew that Hacker News orange is #ff6600 ?'));
 
     });
   </script>
