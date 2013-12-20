@@ -29,7 +29,7 @@ var CommonRegex = function(_text) {
 
   this.getTimes = function(_text) {
     _text = _text || this.text;
-    var timeRegex = /\d{1,2}:\d{2}(?:\s[ap]\.?m\.?)?|\d[ap]\.?m\.?/gim;
+    var timeRegex = /((0?[0-9]|1[0-2]):[0-5][0-9](am|pm)|([01]?[0-9]|2[0-3]):[0-5][0-9])/gim;
     return _text.match(timeRegex);
   };
 
