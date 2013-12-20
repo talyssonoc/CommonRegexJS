@@ -1,7 +1,7 @@
 CommonRegexJS
 =============
 
-CommonRegex port for JavaScript
+[CommonRegex](https://github.com/madisonmay/CommonRegex/ "CommonRegex") port for JavaScript
 
 Find all times, dates, links, phone numbers, and emails in a string. 
 I did the hard work so you don't have to.
@@ -30,7 +30,7 @@ Usage
 
 Alternatively, you can generate a single CommonRegex instance and use it to parse multiple segments of text.
 
-    var parser = CommonRegex();
+    var parser = new CommonRegex();
     console.log(parser.times("When are you free?  Do you want to meet up for coffee at 4:00?"));
     //logs ['4:00']
 
