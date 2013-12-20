@@ -30,8 +30,8 @@ Usage
 
 Alternatively, you can generate a single CommonRegex instance and use it to parse multiple segments of text.
 
-    var parser = new CommonRegex();
-    console.log(parser.times("When are you free?  Do you want to meet up for coffee at 4:00?"));
+    var commonRegex = new CommonRegex();
+    console.log(commonRegex.times("When are you free?  Do you want to meet up for coffee at 4:00?"));
     //logs ['4:00']
 
 Please note that this is currently English/US specific.
