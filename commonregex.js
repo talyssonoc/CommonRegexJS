@@ -1,6 +1,14 @@
 var CommonRegex = function(_text) {
   this.text = _text || '';
 
+  /**
+   * TODO:
+   *
+   *  getCurrency
+   *  getIPv6
+   *  getNumbersBetweenRange
+   */
+
   var opt = function(regex) {
     return '(?:' + regex + ')?';
   };
@@ -63,6 +71,12 @@ var CommonRegex = function(_text) {
     return _text.match(hexValuesRegex)
   };
 
+  this.getAcronyms = function(_text) {
+    _text = _text || this.text;
+    var acronymsRegex = /\b(([A-Z]\.)+|([A-Z]){2,})/gm;
+    return _text.match(acronymsRegex);
+  };
+
   if(typeof _text !== 'undefined') {
     this.dates = this.getDates();
     this.times = this.getTimes();
@@ -71,6 +85,7 @@ var CommonRegex = function(_text) {
     this.emails = this.getEmails();
     this.IPv4 = this.getIPv4();
     this.hexColors = this.getHexColors();
+    this.acronyms = this.getAcronyms();
   }
 
   return this;

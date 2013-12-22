@@ -7,9 +7,9 @@
     window.addEventListener('load', function() {
 
       var text = 'John, please get that article on www.linkedin.com to me by 5:00PM\n'
-      + 'on Jan 9th 2012. 4:00 would be ideal, actually. If you have any \n'
-      + 'questions, you can reach me at (012)-345-6789 or get in touch with\n'
-      + 'my associate at my-email@gmail.com';
+      + 'on Jan 9th 2012. 4:00 would be ideal, actually. If you have any questions,\n'
+      + 'you can reach my associate at (012)-345-6789 or associative@mail.com.\n'
+      + 'I\'ll be in UK during the whole week at a J.R.R. Tolkien convention.';
 
       var commonRegex = new CommonRegex(text);
       console.log(commonRegex.dates);
@@ -19,6 +19,7 @@
       console.log(commonRegex.emails);
       console.log(commonRegex.getIPv4('The IPv4 address for localhost is 127.0.0.1'));
       console.log(commonRegex.getHexColors('Did you knew that Hacker News orange is #ff6600 ?'));
+      console.log(commonRegex.getAcronyms());
 
     });
   </script>
