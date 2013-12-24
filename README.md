@@ -3,7 +3,7 @@ CommonRegexJS
 
 [CommonRegex](https://github.com/madisonmay/CommonRegex/ "CommonRegex") port for JavaScript
 
-Find all times, dates, links, phone numbers, and emails in a string. 
+Find all times, dates, links, phone numbers, emails, IPs, hexadecimal colors and acronyms in a string. 
 I did the hard work so you don't have to.
 
 Pull requests welcome!
