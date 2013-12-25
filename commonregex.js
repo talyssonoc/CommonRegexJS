@@ -4,7 +4,6 @@ var CommonRegex = function(_text) {
   /**
    * TODO:
    *
-   *  getCurrency
    *  getIPv6
    *  getNumbersBetweenRange
    */
@@ -49,7 +48,7 @@ var CommonRegex = function(_text) {
 
   this.getLinks = function(_text) {
     _text = _text || this.text;
-    var linksRegex = /\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\))+(?:\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?\xab\xbb\u201c\u201d\u2018\u2019]))/gim;
+    var linksRegex = /((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\))+(?:\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?\xab\xbb\u201c\u201d\u2018\u2019]))/gim;
     return _text.match(linksRegex);
   };
 
@@ -77,6 +76,12 @@ var CommonRegex = function(_text) {
     return _text.match(acronymsRegex);
   };
 
+  this.getMoney = function(_text) {
+    _text = _text || this.text;
+    var moneyRegex = /((^|\b)U)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b/gm;
+    return _text.match(moneyRegex);
+  };
+
   if(typeof _text !== 'undefined') {
     this.dates = this.getDates();
     this.times = this.getTimes();
@@ -86,6 +91,7 @@ var CommonRegex = function(_text) {
     this.IPv4 = this.getIPv4();
     this.hexColors = this.getHexColors();
     this.acronyms = this.getAcronyms();
+    this.money = this.getMoney();
   }
 
   return this;

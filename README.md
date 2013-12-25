@@ -3,7 +3,7 @@ CommonRegexJS
 
 [CommonRegex](https://github.com/madisonmay/CommonRegex/ "CommonRegex") port for JavaScript
 
-Find all times, dates, links, phone numbers, emails, IPs, hexadecimal colors and acronyms in a string. 
+Find a lot of kinds of common information in a string. 
 I did the hard work so you don't have to.
 
 Pull requests welcome!
@@ -25,6 +25,7 @@ Possible fields and its equivalent methods:
 * `IPv4` or `getIPv4([text])`
 * `hexColors` or `getHexColors([text])`
 * `acronyms` or `getAcronyms([text])`
+* `money` or `getMoney([text])`
 
 Examples
 ========
@@ -51,7 +52,14 @@ Examples
 Alternatively, you can generate a single CommonRegex instance and use it to parse multiple segments of text.
 
     var commonRegex = new CommonRegex();
-    console.log(commonRegex.times('When are you free?  Do you want to meet up for coffee at 4:00?''));
+    console.log(commonRegex.times('When are you free? Do you want to meet up for coffee at 4:00?''));
     //logs ["4:00"]
+    console.log(commonRegex.getMoney('They said the price was U$5,000.90, actually it is U$3,900.5. It\'s $1100.4 less, can you imagine this?'));
+    //logs ["U$5,000.90", "U$3,900.5", "$1100.4"]
     
 For a pratical example, see the `index.html` file.
+
+
+CommonRegex Ports
+=================
+There are CommonRegex ports for other languages, see [here](https://github.com/madisonmay/CommonRegex/#commonregex-ports "CommonRegex ports")
