@@ -54,8 +54,8 @@ Alternatively, you can generate a single CommonRegex instance and use it to pars
     var commonRegex = new CommonRegex();
     console.log(commonRegex.times('When are you free? Do you want to meet up for coffee at 4:00?''));
     //logs ["4:00"]
-    console.log(commonRegex.getMoney('They said the price was U$5,000.90, actually it is U$3,900.5. It\'s $1100.4 less, can you imagine this?'));
-    //logs ["U$5,000.90", "U$3,900.5", "$1100.4"]
+    console.log(commonRegex.getMoney('They said the price was US$5,000.90, actually it is US$3,900.5. It\'s $1100.4 less, can you imagine this?'));
+    //logs ["US$5,000.90", "US$3,900.5", "$1100.4"]
     
 For a pratical example, see the `index.html` file.
 

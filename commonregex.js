@@ -78,7 +78,7 @@ var CommonRegex = function(_text) {
 
   this.getMoney = function(_text) {
     _text = _text || this.text;
-    var moneyRegex = /((^|\b)U)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b/gm;
+    var moneyRegex = /((^|\b)US?)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b/gm;
     return _text.match(moneyRegex);
   };
 
