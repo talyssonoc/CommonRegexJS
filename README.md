@@ -10,6 +10,19 @@ Pull requests welcome!
 
 Please note that this is currently English/US specific.
 
+Usage
+=====
+
+You can use CommonRegexJS normally, using a script tag:
+
+    <script type="text/javascript" src="commonregex.js"></script>
+
+Or import it with RequireJS, putting `commonregex.js` file inside your RequireJS base directory, using like this:
+
+    requirejs(['commonregex'], function(CommonRegex) {
+        //Use CommonRegex normally here
+    }
+
 API
 ===
 
