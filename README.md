@@ -3,8 +3,7 @@ CommonRegexJS
 
 [CommonRegex](https://github.com/madisonmay/CommonRegex/ "CommonRegex") port for JavaScript
 
-Find a lot of kinds of common information in a string. 
-I did the hard work so you don't have to.
+Find a lot of kinds of common information in a string.
 
 Pull requests welcome!
 
