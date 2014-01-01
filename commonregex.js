@@ -1,6 +1,7 @@
 (function(target) {
   var CommonRegex = function(_text) {
     this.text = _text || '';
+    var _ = this;
 
     /**
      * TODO:
@@ -36,53 +37,63 @@
     , linksRegex = /((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\))+(?:\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?\xab\xbb\u201c\u201d\u2018\u2019]))/gim
     , emailsRegex = /([a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+@([a-z0-9]+\.)+([a-z0-9]+))/gim
     , IPv4Regex = /\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/gm
-    , hexValuesRegex = /#(?:[0-9a-fA-F]{3}){1,2}\b/gim
+    , hexColorsRegex = /#(?:[0-9a-fA-F]{3}){1,2}\b/gim
     , acronymsRegex = /\b(([A-Z]\.)+|([A-Z]){2,})/gm
-    , moneyRegex = /((^|\b)US?)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b/gm;
+    , moneyRegex = /((^|\b)US?)?\$\s?[0-9]{1,3}((,[0-9]{3})+|([0-9]{3})+)?(\.[0-9]{1,2})?\b/gm
+    , percentageRegex = /(100(\.0+)?|[0-9]{1,2}(\.[0-9]+)?)%/gm;
+
+    /**
+     * Used to get all the matches of a regex from a string
+     * @param  {String} text  Text to look for the matches
+     * @param  {Regexp} regex Regex to match the text
+     * @return {Array}       Array of matches
+     */
+    var getMatches = function(text, regex) {
+      text = text || _.text;
+      var matches = text.match(regex);
+      if(matches === null)
+        return [];
+      return matches;
+    };
 
     this.getDates = function(_text) {
-      _text = _text || this.text;
-      return _text.match(dateRegex);
+      return getMatches(_text, dateRegex);
     };
 
     this.getTimes = function(_text) {
-      _text = _text || this.text;
-      return _text.match(timeRegex);
+      return getMatches(_text, timeRegex);
     };
 
     this.getPhones = function(_text) {
-      _text = _text || this.text;
-      return _text.match(phoneRegex);
+      return getMatches(_text, phoneRegex);
     };
 
     this.getLinks = function(_text) {
-      _text = _text || this.text;
-      return _text.match(linksRegex);
+      return getMatches(_text, linksRegex);
     };
 
     this.getEmails = function(_text) {
-      _text = _text || this.text;
-      return _text.match(emailsRegex);
+      return getMatches(_text, emailsRegex);
     };
 
     this.getIPv4 = function(_text) {
-      _text = _text || this.text;
-      return _text.match(IPv4Regex);
+      return getMatches(_text, IPv4Regex);
     };
 
     this.getHexColors = function(_text) {
-      _text = _text || this.text;
-      return _text.match(hexValuesRegex)
+      return getMatches(_text, hexColorsRegex);
     };
 
     this.getAcronyms = function(_text) {
-      _text = _text || this.text;
-      return _text.match(acronymsRegex);
+      return getMatches(_text, acronymsRegex);
     };
 
     this.getMoney = function(_text) {
-      _text = _text || this.text;
-      return _text.match(moneyRegex);
+      return getMatches(_text, moneyRegex);
+    };
+
+    this.getPercentages = function(_text) {
+      return getMatches(_text, percentageRegex);
     };
 
     if(!(_text === undefined)) {
@@ -95,6 +106,7 @@
       this.hexColors = this.getHexColors();
       this.acronyms = this.getAcronyms();
       this.money = this.getMoney();
+      this.percentages = this.getPercentages();
     }
 
     return this;
