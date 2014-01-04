@@ -35,6 +35,7 @@ Possible fields and its equivalent methods:
 * `links` or `getLinks([text])`
 * `emails` or `getEmails([text])`
 * `IPv4` or `getIPv4([text])`
+* `IPv6` or `getIPv6([text])`
 * `hexColors` or `getHexColors([text])`
 * `acronyms` or `getAcronyms([text])`
 * `money` or `getMoney([text])`
@@ -70,7 +71,9 @@ Alternatively, you can generate a single CommonRegex instance and use it to pars
     console.log(commonRegex.getMoney('They said the price was US$5,000.90, actually it is US$3,900.5. It\'s $1100.4 less, can you imagine this?'));
     //logs ["US$5,000.90", "US$3,900.5", "$1100.4"]
     console.log(commonRegex.getPercentages('I\'m 99.9999999% sure that I\'ll get a raise of 5%.'));
-    //logs ["99.9999999%", "5%"] 
+    //logs ["99.9999999%", "5%"]
+    console.log(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or, alternatively, ::1.'));
+    //logs ["0:0:0:0:0:0:0:1", "::1"]
     
 For a pratical example, see the `index.html` file.
 
