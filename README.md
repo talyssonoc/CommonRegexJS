@@ -72,7 +72,7 @@ Alternatively, you can generate a single CommonRegex instance and use it to pars
     //logs ["US$5,000.90", "US$3,900.5", "$1100.4"]
     console.log(commonRegex.getPercentages('I\'m 99.9999999% sure that I\'ll get a raise of 5%.'));
     //logs ["99.9999999%", "5%"]
-    console.log(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or, alternatively, ::1.'));
+    console.log(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or alternatively, ::1.'));
     //logs ["0:0:0:0:0:0:0:1", "::1"]
     
 For a pratical example, see the `index.html` file.
