@@ -16,7 +16,7 @@ You can use CommonRegexJS normally, using a script tag:
 
     <script type="text/javascript" src="commonregex.js"></script>
 
-Or import it with RequireJS, putting `commonregex.js` file inside your RequireJS base directory, using like this:
+Or importing it with RequireJS, putting `commonregex.js` file inside your RequireJS base directory, using like this:
 
     requirejs(['commonregex'], function(CommonRegex) {
         //Use CommonRegex normally here
@@ -74,32 +74,8 @@ Alternatively, you can generate a single CommonRegex instance and use it to pars
     //logs ["99.9999999%", "5%"]
     console.log(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or alternatively, ::1.'));
     //logs ["0:0:0:0:0:0:0:1", "::1"]
-    
-For a pratical example, see the `index.html` file.
 
 
 CommonRegex Ports
 =================
 There are CommonRegex ports for other languages, see [here](https://github.com/madisonmay/CommonRegex/#commonregex-ports "CommonRegex ports")
-
-License
-=======
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
