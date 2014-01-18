@@ -22,6 +22,10 @@ Or importing it with RequireJS, putting `commonregex.js` file inside your Requir
         //Use CommonRegex normally here
     }
 
+Or install via NPM with
+    
+    npm install commonregex
+
 API
 ===
 
