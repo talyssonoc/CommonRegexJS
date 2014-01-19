@@ -47,7 +47,7 @@ describe('CommonRegex module', function(){
   });
 
   it('IPv6', function(){
-    expect(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or alternatively, ::1.'))
+    expect(commonRegex.getIPv6('The IPv6 address for localhost is 0:0:0:0:0:0:0:1, or alternatively ::1, but not :1:.'))
     .to.eql(['0:0:0:0:0:0:0:1', '::1']);
   });
 
@@ -64,8 +64,13 @@ describe('CommonRegex module', function(){
     .to.eql(['US$5,000.90', 'US$3,900.5', '$1100.4']);
   });
 
-  it('percentage', function(){
+  it('percentages', function(){
     expect(commonRegex.getPercentages('I\'m 99.9999999% sure that I\'ll get a raise of 5%.'))
     .to.eql(['99.9999999%', '5%']);
+  });
+
+  it('credit cards', function(){
+    expect(commonRegex.getCreditCards('His credit card number can be writen as 1234567891011121 or 1234-5678-9101-1121, but not 123-4567891011121.'))
+    .to.eql(['1234567891011121', '1234-5678-9101-1121']);
   });
 });

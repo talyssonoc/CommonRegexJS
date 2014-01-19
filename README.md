@@ -31,7 +31,7 @@ API
 
 You can instantiate a CommonRegex object passing a string in the constructor and use the fields of the object to acess the matches and the methods for the matches of other strings (passing the string as parameter), or not pass a string in the constructor and just use the methods.
 
-Possible fields and its equivalent methods:
+Possible properties and its equivalent methods:
 
 * `dates` or `getDates([text])`
 * `times` or `getTimes([text])`
@@ -44,6 +44,7 @@ Possible fields and its equivalent methods:
 * `acronyms` or `getAcronyms([text])`
 * `money` or `getMoney([text])`
 * `percentages` or `getPercentages([text])` (matches percentages between 0.00% and 100.00%)
+* `creditCards` or `getCreditCards([text])`
 
 Examples
 ========
