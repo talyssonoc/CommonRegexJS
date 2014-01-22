@@ -14,7 +14,7 @@ Usage
 
 You can use CommonRegexJS normally, using a script tag:
 
-    <script type="text/javascript" src="commonregex.js"></script>
+    <script src="commonregex.js"></script>
 
 Or importing it with RequireJS, putting `commonregex.js` file inside your RequireJS base directory, using like this:
 
