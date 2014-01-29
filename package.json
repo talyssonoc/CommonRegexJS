@@ -20,7 +20,7 @@
       "url": "https://github.com/talyssonoc/commonregexjs/blob/master/LICENSE"
     }
   ],
-  "main": "lib/commonregexjs",
+  "main": "lib/commonregex",
   "engines": {
     "node": ">= 0.10.0"
   },
