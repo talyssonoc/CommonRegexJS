@@ -1,7 +1,7 @@
 {
   "name": "commonregex",
   "description": "Find a lot of kinds of common information in a string.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/talyssonoc/commonregexjs",
   "author": {
     "name": "talyssonoc",
