@@ -73,4 +73,18 @@ describe('CommonRegex module', function(){
     expect(commonRegex.getCreditCards('His credit card number can be writen as 1234567891011121 or 1234-5678-9101-1121, but not 123-4567891011121.'))
     .to.eql(['1234567891011121', '1234-5678-9101-1121']);
   });
+
+  it('addresses', function() {
+    var text = 'checkout the new place at 101 main st., 504 parkwood drive, 3 elm boulevard, 500 elm street, 101 main straight';
+
+    var matches = [
+      '101 main st.',
+      '504 parkwood drive',
+      '3 elm boulevard',
+      '500 elm street'
+    ];
+
+    expect(commonRegex.getAddresses(text)).to.eql(matches);
+
+  });
 });

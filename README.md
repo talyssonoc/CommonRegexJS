@@ -45,6 +45,7 @@ Possible properties and its equivalent methods:
 * `money` or `getMoney([text])`
 * `percentages` or `getPercentages([text])` (matches percentages between 0.00% and 100.00%)
 * `creditCards` or `getCreditCards([text])`
+* `addresses` or `getAddresses([text])`
 
 Examples
 ========
