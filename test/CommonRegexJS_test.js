@@ -16,7 +16,7 @@ var expect = chai.expect;
 var text = 'John, please get that article on www.linkedin.com to me by 5:00PM\n'
       + 'on Jan 9th 2012. 4:00 would be ideal, actually. If you have any questions,\n'
       + 'you can reach my associate at (012)-345-6789 or associative@mail.com.\n'
-      + 'I\'ll be in UK during the whole week at a J.R.R. Tolkien convention.';
+      + 'I\'ll be in UK during the whole week at a J.R.R. Tolkien convention, starting friday at 7PM.';
 
 var CommonRegex = require('../lib/commonregex.js');
 var commonRegex = new CommonRegex(text);
@@ -27,7 +27,7 @@ describe('CommonRegex module', function(){
   });
 
   it('times', function(){
-    expect(commonRegex.times).to.eql(['5:00PM', '4:00']);
+    expect(commonRegex.times).to.eql(['5:00PM', '4:00', '7PM']);
   });
 
   it('phones', function(){
