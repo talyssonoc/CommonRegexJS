@@ -17,6 +17,6 @@
       "exports": true,
       "console": true,
       "describe": true,
-      "it": true
+      "define": true
     }
 }

@@ -1,0 +1,12 @@
+# editorconfig.org
+root = true
+
+[lib/**.js]
+indent_style = tab
+tab_width = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false
+quote_type = single
+spaces_around_operators = true
