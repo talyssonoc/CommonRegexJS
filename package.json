@@ -1,7 +1,7 @@
 {
   "name": "commonregex",
   "description": "Find a lot of kinds of common information in a string.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/talyssonoc/commonregexjs",
   "author": {
     "name": "talyssonoc",
@@ -30,10 +30,12 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.1",
-    "grunt-mocha-cli": "^1.10.0",
+    "grunt-mocha-test": "^0.12.7",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.21.4",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jscs": "^1.1.0"
   },
   "keywords": [
     "regex",
