@@ -8,18 +8,32 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    mochacli: {
+    mochaTest: {
+      test: {
         src: ['test/*.js'],
         options: {
-            globals: ['chai'],
-            timeout: 6000,
-            ignoreLeaks: false,
-            ui: 'bdd',
-            reporter: 'spec'
+          globals: ['chai'],
+          timeout: 6000,
+          ignoreLeaks: false,
+          ui: 'bdd',
+          reporter: 'spec'
         }
+      }
+    },
+    jshint: {
+      all: ['lib/**/*.js'],
+      options: {
+        jshintrc: '.jshintrc'
+      }
+    },
+    jscs: {
+      src: 'lib/**/*.js',
+      options: {
+        config: '.jscsrc'
+      }
     }
   });
 
-  grunt.registerTask('test', ['mochacli']);
+  grunt.registerTask('test', ['mochaTest']);
 
 };
