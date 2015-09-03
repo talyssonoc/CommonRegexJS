@@ -82,6 +82,5 @@ describe('CommonRegex module', function() {
     ];
 
     expect(commonRegex.getAddresses(text)).to.eql(matches);
-
   });
 });
