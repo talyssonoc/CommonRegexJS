@@ -14,17 +14,31 @@ Usage
 
 You can use CommonRegexJS normally, using a script tag:
 
-    <script src="commonregex.js"></script>
+```html
+  <script src="commonregex.js"></script>
+```
 
 Or importing it with RequireJS, putting `commonregex.js` file inside your RequireJS base directory, using like this:
 
-    requirejs(['commonregex'], function(CommonRegex) {
-        //Use CommonRegex normally here
-    }
+```js
+  requirejs(['commonregex'], function(CommonRegex) {
+      //Use CommonRegex normally here
+  }
+```
 
 Or install via NPM with
     
-    npm install commonregex
+```sh
+  $ npm install commonregex
+```
+
+And use like this:
+
+```js
+  import CommonRegex from 'commonregex'; // For ES6 environments
+
+  var CommonRegex = require('commonregex'); // For ES5 environments
+```
 
 API
 ===
@@ -33,19 +47,21 @@ You can instantiate a CommonRegex object passing a string in the constructor and
 
 Possible properties and its equivalent methods:
 
-* `dates` or `getDates([text])`
-* `times` or `getTimes([text])`
-* `phones` or `getPhones([text])`
-* `links` or `getLinks([text])`
-* `emails` or `getEmails([text])`
-* `IPv4` or `getIPv4([text])`
-* `IPv6` or `getIPv6([text])`
-* `hexColors` or `getHexColors([text])`
-* `acronyms` or `getAcronyms([text])`
-* `money` or `getMoney([text])`
-* `percentages` or `getPercentages([text])` (matches percentages between 0.00% and 100.00%)
-* `creditCards` or `getCreditCards([text])`
-* `addresses` or `getAddresses([text])`
+* `#dates` or `#getDates([text])`
+* `#times` or `#getTimes([text])`
+* `#phones` or `#getPhones([text])`
+* `#links` or `#getLinks([text])`
+* `#emails` or `#getEmails([text])`
+* `#IPv4` or `#getIPv4([text])`
+* `#IPv6` or `#getIPv6([text])`
+* `#hexColors` or `#getHexColors([text])`
+* `#acronyms` or `#getAcronyms([text])`
+* `#money` or `#getMoney([text])`
+* `#percentages` or `#getPercentages([text])` (matches percentages between 0.00% and 100.00%)
+* `#creditCards` or `#getCreditCards([text])`
+* `#addresses` or `#getAddresses([text])`
+
+The regexes used internally are available at `CommonRegex.regexes`.
 
 Examples
 ========
